@@ -28,16 +28,28 @@ const connect = () => {
     port: 50541
   });
   conn.setEncoding("utf8");
-  console.log("connected to game server");
+
+  //conn.write("welcome to the game of Snake\n");
+
+  conn.on('data', (data) => {
+    console.log('Server says: ', data);
+  });
+
+  conn.on('connect', () => {
+    console.log("Congratulations, you connected to game server");
+    conn.write('Name: JMD'); //name pushed to server
+  });
+
+
   return conn;
 };
 
-const relay = () => {
+/*const relay = () => {
   console.log("Connecting....");
   connect();
-};
+}; */
 
 module.exports = {
   connect: connect,
-  relay: relay,
+  // relay: relay,
 };

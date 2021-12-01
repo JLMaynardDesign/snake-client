@@ -26,7 +26,7 @@ console.log("Connecting ...");
 connect();
 */
 
-const {connect, relay} = require("./client.js");
+const {connect} = require("./client.js");
 
 connect;
-relay;
+//relay;
