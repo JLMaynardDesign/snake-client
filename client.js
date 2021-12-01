@@ -25,31 +25,35 @@ const net = require('net');
 const connect = () => {
   const conn = net.createConnection({
     host: '192.168.1.29',
-    port: 50541
+    port: 50541,
   });
+
   conn.setEncoding("utf8");
 
   //conn.write("welcome to the game of Snake\n");
 
-  conn.on('data', (data) => {
-    console.log('Server says: ', data);
-  });
 
   conn.on('connect', () => {
+    conn.write('Name: JMD'); //name displayed on game
+    //setTimeout(() => conn.write("Move: up"), 1000);
+    //etTimeout(() => conn.write("Move: down"), 2000);
+    //name pushed to server
     console.log("Congratulations, you connected to game server");
-    conn.write('Name: JMD'); //name pushed to server
   });
+
+  //conn.on('connect', (data) => {
+  // console.log("Move: up");
+  //});
+  
 
 
   return conn;
 };
 
-/*const relay = () => {
-  console.log("Connecting....");
-  connect();
-}; */
+console.log("Connecting....");
+connect();
+
 
 module.exports = {
   connect: connect,
-  // relay: relay,
 };
