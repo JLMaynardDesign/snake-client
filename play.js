@@ -3,6 +3,7 @@
 //require IP address & port numberconst net = require("net");
 //terminate the app with ctrl + c
 
+/*
 const net = require('net');
 
 // establishes a connection with the game server
@@ -23,3 +24,9 @@ const connect = function () {
 
 console.log("Connecting ...");
 connect();
+*/
+
+const {connect, relay} = require("./client.js");
+
+connect;
+relay;
