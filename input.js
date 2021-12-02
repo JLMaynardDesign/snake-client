@@ -14,18 +14,22 @@ const handleUserInput = function(key) {
   if (key === "a") {
     //process.stdin('Move: left');
     connection.write(a);
+    console.log("Say: left");
   }
 
   if (key === "w") {
     connection.write(w);
+    console.log("Say: up");
   }
 
   if (key === "s") {
     connection.write(s);
+    console.log("Say: down");
   }
 
   if (key === "d") {
     connection.write(d);
+    console.log("Say: right");
   }
 
   if (key === '\u0003') {

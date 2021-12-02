@@ -22,9 +22,9 @@ connect(); */
 
 const net = require('net');
 
-const connect = function() {
+const connect = function () {
   const conn = net.createConnection({
-    host: '192.168.1.29',
+    host: '165.227.47.243', //192.168.1.29
     port: 50541,
   });
 
@@ -40,7 +40,7 @@ const connect = function() {
   conn.on('data', (data) => {
     console.log(data);
   });
-  
+
   return conn;
 };
 
